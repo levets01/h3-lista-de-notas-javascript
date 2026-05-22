@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notas App</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="src/styles/styles.css">
+</head>
+<body>
+
+  <main class="app">
+
+    <section class="card">
+
+      <div class="header">
+        <div>
+          <p class="tag">Productividad</p>
+          <h1>Mis Notas</h1>
+        </div>
+
+        <div class="dot"></div>
+      </div>
+
+      <div class="input-group">
+
+        <input 
+          type="text"
+          id="notaInput"
+          placeholder="Escribe una nota..."
+          autocomplete="off"
+        >
+
+        <button id="btnAgregar">
+          <span>Agregar</span>
+        </button>
+
+      </div>
+
+      <ul id="listaNotas"></ul>
+
+    </section>
+
+  </main>
+
+  <script src="src/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --bg: #0f172a;
+    --card: rgba(15, 23, 42, 0.75);
+    --border: rgba(255,255,255,0.08);
+
+    --text: #f8fafc;
+    --muted: #94a3b8;
+
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+
+    --danger: #ef4444;
+    --danger-hover: #dc2626;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
+    --radius: 22px;
+}
+
+body {
+
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left, #312e81 0%, transparent 30%),
+        radial-gradient(circle at bottom right, #0f766e 0%, transparent 30%),
+        var(--bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+    color: var(--text);
+}
+
+.app {
+    width: 100%;
+    max-width: 700px;
+}
+
+.card {
+
+    backdrop-filter: blur(18px);
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 32px;
+
+    box-shadow: var(--shadow);
+}
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+.tag {
+
+    color: #a5b4fc;
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 6px;
+
+    letter-spacing: 0.5px;
+}
+
+h1 {
+
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.dot {
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 12px rgba(34,197,94,0.8);
+}
+
+.input-group {
+
+    display: flex;
+    gap: 14px;
+
+    margin-bottom: 28px;
+}
+
+#notaInput {
+
+    flex: 1;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.04);
+
+    color: white;
+
+    padding: 16px 18px;
+
+    border-radius: 16px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.25s ease;
+}
+
+#notaInput::placeholder {
+    color: var(--muted);
+}
+
+#notaInput:focus {
+
+    border-color: rgba(57, 59, 168, 0.7);
+
+    box-shadow:
+        0 0 0 4px rgba(9, 9, 38, 0.15);
+}
+
+#btnAgregar {
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 0 24px;
+
+    border-radius: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+
+    min-width: 130px;
+}
+
+#btnAgregar:hover {
+
+    background: var(--primary-hover);
+
+    transform: translateY(-2px);
+}
+
+#btnAgregar:active {
+
+    transform: scale(0.98);
+}
+
+#listaNotas {
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    list-style: none;
+}
+
+#listaNotas li {
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    animation: fadeIn 0.3s ease;
+}
+
+#listaNotas li:hover {
+
+    border-color: rgba(255,255,255,0.12);
+
+    transform: translateY(-2px);
+
+    transition: 0.25s ease;
+}
+
+#listaNotas span {
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+#listaNotas button {
+
+    border: none;
+
+    background: rgba(239,68,68,0.15);
+
+    color: #fca5a5;
+
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+#listaNotas button:hover {
+
+    background: var(--danger);
+
+    color: white;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .input-group {
+
+        flex-direction: column;
+    }
+
+    #btnAgregar {
+
+        width: 100%;
+        height: 52px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #listaNotas li {
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #listaNotas button {
+
+        width: 100%;
+    }
+}
